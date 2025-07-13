@@ -1,77 +1,197 @@
-# Hidden Browser - YouTube Channel Video Finder
+# YouTube Channel Video Finder
 
-An Android application that runs a hidden browser to search YouTube for videos from specific channels and automatically clicks on matching videos.
+A Python application that runs a hidden browser to search YouTube for videos from specific channels and automatically clicks on matching videos.
 
 ## Features
 
-- **Hidden WebView Browser**: Runs a WebView component that loads YouTube
+- **Hidden Browser**: Runs Chrome, Firefox, or Edge in headless mode
 - **Topic-based Search**: Search for videos on specific topics
 - **Channel Filtering**: Find videos uploaded by particular channels
 - **Automated Clicking**: Automatically clicks on videos from the specified channel
-- **Modern UI**: Material Design interface with clean, user-friendly layout
+- **Multiple Browser Support**: Choose between Chrome, Firefox, or Edge
+- **GUI Interface**: User-friendly graphical interface
+- **Screenshot Capture**: Take screenshots of search results or video pages
+- **Results Export**: Save search results to JSON files
+- **Video Information**: Extract detailed video information (title, channel, views, etc.)
 
-## How It Works
+## Installation
 
-1. **Input Fields**: Enter a search topic and channel name
-2. **YouTube Search**: The app navigates to YouTube and searches for the topic + channel name
-3. **JavaScript Injection**: Injects JavaScript to scan the search results
-4. **Channel Matching**: Looks for videos from the specified channel
-5. **Auto-Click**: Automatically clicks on the first matching video found
+### Prerequisites
+
+1. **Python 3.7+** installed on your system
+2. **Chrome, Firefox, or Edge** browser installed
+3. **pip** package manager
+
+### Setup
+
+1. **Clone or download** this repository
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-1. Launch the app
-2. Enter a search topic (e.g., "Android development")
-3. Enter the channel name (e.g., "Google Developers")
-4. Tap "Search YouTube"
-5. The app will automatically find and click on a video from that channel
+### Command Line Interface
 
-## Technical Details
+#### Basic Version
+```bash
+python youtube_channel_finder.py
+```
 
-### Key Components
+#### Advanced Version
+```bash
+python youtube_finder_advanced.py
+```
 
-- **MainActivity.java**: Main activity handling WebView and user interactions
-- **activity_main.xml**: Layout with input fields and WebView
-- **JavaScript Injection**: Custom script to find and click channel videos
+### GUI Version
+```bash
+python youtube_finder_gui.py
+```
 
-### Permissions
+## How It Works
 
-- `INTERNET`: Required for WebView to load YouTube
-- `ACCESS_NETWORK_STATE`: For network connectivity checks
+1. **Input**: Enter a search topic and channel name
+2. **Browser Launch**: Opens a hidden browser (Chrome/Firefox/Edge)
+3. **YouTube Search**: Navigates to YouTube and searches for topic + channel
+4. **Video Scanning**: Scans search results for videos from the specified channel
+5. **Auto-Click**: Automatically clicks on the first matching video found
+6. **Information Extraction**: Captures video details (title, channel, views, etc.)
 
-### WebView Configuration
+## Examples
 
-- JavaScript enabled for dynamic content interaction
-- DOM storage enabled for YouTube functionality
-- Zoom controls for better user experience
-- Proper encoding for international content
+### Example 1: Search for Android Development Videos
+```
+Search Topic: Android development
+Channel Name: Google Developers
+```
 
-## Building the App
+### Example 2: Search for Python Tutorials
+```
+Search Topic: Python tutorial
+Channel Name: Corey Schafer
+```
 
-1. Ensure you have Android Studio installed
-2. Open the project in Android Studio
-3. Sync Gradle files
-4. Build the project (Build > Make Project)
-5. Run on an Android device or emulator
+### Example 3: Search for Machine Learning Content
+```
+Search Topic: machine learning
+Channel Name: Sentdex
+```
 
-## Requirements
+## Features Comparison
 
-- Android API Level 21 (Android 5.0) or higher
-- Internet connection
-- YouTube access
+| Feature | Basic | Advanced | GUI |
+|---------|-------|----------|-----|
+| Hidden Browser | ✅ | ✅ | ✅ |
+| Multiple Browsers | ❌ | ✅ | ✅ |
+| Screenshot Capture | ❌ | ✅ | ✅ |
+| Results Export | ❌ | ✅ | ✅ |
+| Video Information | Basic | Detailed | Detailed |
+| Error Handling | Basic | Advanced | Advanced |
+| User Interface | CLI | CLI | GUI |
 
-## Security Notes
+## Configuration Options
 
-- The app requires internet permissions to function
-- JavaScript is enabled for YouTube interaction
-- No data is stored locally beyond app cache
+### Browser Options
+- **Chrome**: Fastest, most reliable
+- **Firefox**: Good alternative
+- **Edge**: Windows-specific option
+
+### Headless Mode
+- **Enabled**: Browser runs invisibly (recommended)
+- **Disabled**: Browser window visible (for debugging)
+
+### Search Parameters
+- **Max Videos**: Number of videos to scan (default: 30)
+- **Scroll Count**: Number of scrolls to load more results (default: 5)
+
+## Output Files
+
+### Screenshots
+- `youtube_screenshot_YYYYMMDD_HHMMSS.png`
+
+### Search Results
+- `youtube_search_results_YYYYMMDD_HHMMSS.json`
 
 ## Troubleshooting
 
-- **No videos found**: Ensure the channel name is spelled correctly
-- **WebView not loading**: Check internet connection
-- **App crashes**: Verify Android version compatibility
+### Common Issues
+
+1. **Browser Driver Not Found**
+   ```
+   Solution: The app automatically downloads drivers using webdriver-manager
+   ```
+
+2. **No Videos Found**
+   ```
+   - Check channel name spelling
+   - Try different search terms
+   - Increase scroll count
+   ```
+
+3. **Browser Crashes**
+   ```
+   - Try different browser (Chrome → Firefox)
+   - Disable headless mode for debugging
+   - Check system resources
+   ```
+
+4. **Permission Errors**
+   ```
+   - Run as administrator (Windows)
+   - Check file permissions
+   ```
+
+### Performance Tips
+
+- Use headless mode for faster execution
+- Disable images in browser settings (already configured)
+- Close other browser instances
+- Use Chrome for best performance
+
+## Technical Details
+
+### Dependencies
+- **selenium**: Web automation
+- **webdriver-manager**: Automatic driver management
+- **requests**: HTTP requests
+- **beautifulsoup4**: HTML parsing
+- **lxml**: XML/HTML parser
+
+### Browser Compatibility
+- **Chrome**: 90+ (recommended)
+- **Firefox**: 88+
+- **Edge**: 90+
+
+### System Requirements
+- **RAM**: 2GB+ recommended
+- **Storage**: 100MB free space
+- **Network**: Stable internet connection
+
+## Security Notes
+
+- The app requires internet access to function
+- No data is stored beyond temporary files
+- Screenshots and results are saved locally
+- Respect YouTube's terms of service
 
 ## License
 
 This project is for educational purposes. Please respect YouTube's terms of service when using this application.
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## Changelog
+
+### Version 1.0
+- Initial release with basic functionality
+- Support for Chrome browser
+- Command line interface
+
+### Version 2.0
+- Added GUI interface
+- Multiple browser support
+- Screenshot and export features
+- Enhanced error handling
