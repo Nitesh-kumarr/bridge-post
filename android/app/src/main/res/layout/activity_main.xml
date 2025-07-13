@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Browser Automation"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start YouTube Automation"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/statusButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Status"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_background_secondary"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/cleanupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cleanup Driver"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/button_background_secondary"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Checking server status..."
+        android:textSize="14sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/status_background"
+        android:textColor="@android:color/black"
+        android:minHeight="100dp" />
+
+</LinearLayout>
