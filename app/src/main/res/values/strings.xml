@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hidden Browser</string>
+    <string name="search_youtube">Search YouTube</string>
+    <string name="search_topic_hint">Search Topic</string>
+    <string name="channel_name_hint">Channel Name</string>
+    <string name="please_enter_both_fields">Please enter both topic and channel name</string>
+</resources>
